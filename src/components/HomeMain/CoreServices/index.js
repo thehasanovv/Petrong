@@ -45,8 +45,11 @@ const Container = styled.div`
   @media screen and (max-width: 1300px) {
     margin: 0 2rem;
   }
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 992px) {
     margin: 0;
+  }
+  @media screen and (max-width: 768px) {
+    padding: 8rem 1rem 6rem;
   }
 `;
 const Wrapper = styled.div`
@@ -59,20 +62,18 @@ const Wrapper = styled.div`
 const WrapperLeft = styled.div`
   padding: 3rem 3rem 3rem 0;
   width: 40%;
-
+  > span {
+    width: 100%;
+  }
   @media screen and (max-width: 1200px) {
     width: 50%;
   }
   @media screen and (max-width: 992px) {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     padding: 0;
   }
-  > span {
-    @media screen and (max-width: 992px) {
-      width: 100%;
-    }
-  }
+
   img {
     width: 100%;
   }

@@ -79,6 +79,9 @@ const Container = styled.div`
   @media screen and (max-width: 996px) {
     height: auto;
   }
+  @media screen and (max-width: 768px) {
+    padding: 0 1rem;
+  }
 `;
 const Wrapper = styled.div`
   display: flex;
@@ -90,6 +93,9 @@ const Wrapper = styled.div`
   max-width: 115rem;
   margin: 0 auto;
   background-position: 50% 50%;
+  @media screen and (max-width: 768px) {
+    padding: 4rem 0;
+  }
 `;
 const FooterTop = styled.div`
   flex: 1;
@@ -128,7 +134,7 @@ const ListItem = styled.li`
 const Social = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1.3rem;
   color: ${(props) => props.theme.mainGrey};
   gap: 1rem;
   div {
@@ -149,7 +155,8 @@ const Social = styled.div`
 const Phone = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1.3rem;
+
   color: ${(props) => props.theme.mainGrey};
   font-family: "Montserrat";
 
@@ -165,7 +172,8 @@ const Phone = styled.div`
 const Mail = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1.3rem;
+
   color: ${(props) => props.theme.mainGrey};
   font-family: "Montserrat";
   img {

@@ -48,6 +48,9 @@ const Container = styled.div`
     text-align: center;
     color: ${(props) => props.theme.mainBlack};
   }
+  @media screen and (max-width: 768px) {
+    padding: 6rem 1rem;
+  }
 `;
 const Promises = styled.div`
   display: grid;
@@ -77,10 +80,14 @@ const PromisesWrapper = styled.div`
   &:hover {
     transform: scale(1.02);
   }
+  @media screen and (max-width: 768px) {
+    padding: 0.5rem;
+  }
 `;
 const PWicon = styled.div`
   grid-row: 1 / span 3;
   img {
+    padding-top: 2.2px;
   }
 `;
 const PWtitle = styled.h4`

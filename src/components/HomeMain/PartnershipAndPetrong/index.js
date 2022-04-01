@@ -40,15 +40,16 @@ const Container = styled.div`
     rgba(0, 0, 0, 1) 50%,
     rgba(235, 250, 244, 1) 50%
   );
+  padding: 0 3rem;
 
   @media screen and (max-width: 768px) {
     background: transparent;
     margin-bottom: 3rem;
+    padding: 0 1rem;
   }
 `;
 
 const PartnerShipSection = styled.div`
-  padding: 0 3rem;
   background-image: url("images/partnership.svg");
   height: 100%;
   background-repeat: no-repeat;
@@ -84,6 +85,9 @@ const PartnerShipSectionLeft = styled.div`
     @media screen and (max-width: 962px) {
       transform: translateX(0.8rem);
       width: 100%;
+    }
+    @media screen and (max-width: 768px) {
+      transform: translateX(0);
     }
   }
 `;
