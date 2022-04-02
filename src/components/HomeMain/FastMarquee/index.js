@@ -41,7 +41,7 @@ const ReviewSlider = () => {
 export default ReviewSlider;
 
 const Container = styled.div`
-  padding: 3rem 0;
+  padding: 7rem 0;
   background: #002fa60d;
   h2 {
     text-align: center;

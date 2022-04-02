@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
-const PartnershipAndPetrong = () => {
+const PetrongPacioli = () => {
   return (
     <Container>
       <PartnerShipSection>
@@ -14,22 +14,26 @@ const PartnershipAndPetrong = () => {
           />
         </PartnerShipSectionLeft>
         <PartnerShipSectionRight>
-          <h2>Partnership for agencies</h2>
+          <h2>Petrong & Pacioli</h2>
           <p>
-            A reliable coding partner that delivers solutions to your business
-            challenges and stays by your side in the long term. Having the whole
-            spectrum of web development expertise, we are here to take care of
-            your projects while making it possible for you to focus on growing
-            your own business.
+            Pacioli is the flagship product at petrong software solutions, a
+            tailored digital lending tools that helps microfinance institutions
+            to efficiently and quickly onboard customers and to account
+            reconciliation with financial inclution as the motivation. Pacioli
+            improves female customers comfort with the service by specifically
+            design for unique constraint.
           </p>
-          <button>Partnership Details</button>
+          <div>
+            <button>Pacioli</button>
+            <button>Demo Video</button>
+          </div>
         </PartnerShipSectionRight>
       </PartnerShipSection>
     </Container>
   );
 };
 
-export default PartnershipAndPetrong;
+export default PetrongPacioli;
 
 const Container = styled.div`
   /* height: 40rem; */
@@ -127,6 +131,10 @@ const PartnerShipSectionRight = styled.div`
     @media screen and (max-width: 962px) {
       line-height: 1.5rem;
     }
+  }
+  div {
+    display: flex;
+    gap: 2rem;
   }
   button {
     border-radius: 100px;

@@ -4,7 +4,7 @@ import PartnershipAndPetrong from "./PartnershipAndPetrong";
 import OurPromise from "./OurPromise";
 import Idea from "./Idea";
 import ReviewSlider from "./FastMarquee";
-// import Reviews from "./MarqueeSlider";
+import PetrongPacioli from "./PetrongPacioli";
 
 const HomeMain = () => {
   return (
@@ -12,7 +12,7 @@ const HomeMain = () => {
       <CoreMain />
       <PartnershipAndPetrong />
       <ReviewSlider />
-      {/* <Reviews /> */}
+      <PetrongPacioli />
       <OurPromise />
       <Idea />
     </Container>

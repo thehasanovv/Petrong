@@ -28,12 +28,10 @@ body {
   background: #00d285;
 }
 
-/* Handle */
-/* ::-webkit-scrollbar-thumb {
-  background: #888;
-} */
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb {
   background: #02793b;
 }
+/* Handle on hover */
+/* ::-webkit-scrollbar-thumb:hover {
+  background: #02793b;
+} */

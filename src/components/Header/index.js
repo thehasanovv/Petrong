@@ -1,20 +1,35 @@
 import styled from "styled-components";
-
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
+import { useState } from "react";
+import { HeaderMenuList } from "../../mocks/HeaderMenuList";
 const Header = () => {
+  const [showMenu, setShowMenu] = useState(false);
+
+  const showMenuHandler = () => {
+    setShowMenu((prevState) => !prevState);
+  };
+
   return (
     <Container>
-      <BgColorRight></BgColorRight>
+      <BgColorRight />
       <Nav>
         <Logo>
           <a href="#">
             <img src="images/logo.svg" />
           </a>
         </Logo>
-        <NavList>
-          <NavListItem>
-            <Link href="#">About</Link>
-          </NavListItem>
-          <NavListItem>
+        <NavList isShowMenu={showMenu}>
+          <ToggleCloseButton onClick={showMenuHandler}>
+            <CloseIcon />
+          </ToggleCloseButton>
+          {HeaderMenuList.map((link) => (
+            <NavListItem key={link.id} onClick={showMenuHandler}>
+              <Link href={`${link.path}`}>{link.title}</Link>
+            </NavListItem>
+          ))}
+
+          {/* <NavListItem>
             <Link href="#">Portfolio</Link>
           </NavListItem>
           <NavListItem>
@@ -28,8 +43,11 @@ const Header = () => {
           </NavListItem>
           <NavListItem>
             <Link href="#">Portfolio</Link>
-          </NavListItem>
+          </NavListItem> */}
         </NavList>
+        <ToggleButton onClick={showMenuHandler}>
+          <MenuIcon />
+        </ToggleButton>
       </Nav>
       <HeaderMain>
         <HeaderMainTitle>Get the next level developments. </HeaderMainTitle>
@@ -85,6 +103,9 @@ const Container = styled.header`
   @media screen and (max-width: 992px) {
     height: auto;
   }
+  @media screen and (max-width: 768px) {
+    padding: 0 1rem;
+  }
 `;
 const Nav = styled.div`
   display: flex;
@@ -92,7 +113,7 @@ const Nav = styled.div`
   align-items: center;
   height: 6rem;
   font-family: "Poppins", sans-serif;
-  z-index: 1;
+  z-index: 10;
   padding: 0 6rem;
   @media screen and (max-width: 768px) {
     padding: 0;
@@ -113,12 +134,27 @@ const NavList = styled.ul`
   cursor: pointer;
 
   @media screen and (max-width: 992px) {
-    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 75%;
+    background-color: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: all 0.5s;
+    ${(props) =>
+      props.isShowMenu
+        ? "transform: translateX(0%)"
+        : "transform: translateX(100%)"}
   }
 `;
 const NavListItem = styled.li`
   margin-left: 2rem;
   position: relative;
+  @media screen and (max-width: 992px) {
+    margin-top: 1.5rem;
+  }
 `;
 
 const Link = styled.a`
@@ -138,8 +174,25 @@ const Link = styled.a`
       width: 100%;
     }
   }
+  @media screen and (max-width: 992px) {
+    color: ${(props) => props.theme.mainBlack};
+  }
 `;
 
+const ToggleButton = styled.div`
+  display: none;
+  svg {
+    font-size: 2rem;
+    color: #fff;
+  }
+
+  @media screen and (max-width: 992px) {
+    display: block;
+  }
+`;
+const ToggleCloseButton = styled.div`
+  padding: 1rem;
+`;
 const HeaderMain = styled.div`
   flex: 1;
   display: grid;
@@ -158,9 +211,6 @@ const HeaderMain = styled.div`
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, auto);
     height: auto;
-  }
-  @media screen and (max-width: 768px) {
-    justify-items: center;
   }
 `;
 const HeaderMainTitle = styled.h1`
@@ -191,14 +241,18 @@ const HeaderMainContent = styled.p`
     max-width: 70%;
   }
   @media screen and (max-width: 768px) {
+    max-width: 100%;
     width: 100vw;
-    text-align: center;
+    padding: 0 1rem;
   }
 `;
 const HeaderMainBts = styled.div`
   display: flex;
   gap: 2rem;
   align-self: flex-start;
+  @media screen and (max-width: 768px) {
+    justify-content: center;
+  }
 `;
 const Btn = styled.button`
   border-radius: 100px;
