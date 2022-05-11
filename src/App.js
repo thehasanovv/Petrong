@@ -1,14 +1,21 @@
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./style/theme";
-import "./App.css";
+import Layout from "./components/Layout";
+import About from "./pages/About";
 import Home from "./pages/Home";
-import Footer from "./components/Footer";
+
 function App() {
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
-        <Home />
-        <Footer />
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+        </Layout>
       </ThemeProvider>
     </div>
   );
