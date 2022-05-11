@@ -1,4 +1,4 @@
-# Bankist-app
+# Community-app
 
 To view a live example, [click here](https://petrong.vercel.app/)
 
